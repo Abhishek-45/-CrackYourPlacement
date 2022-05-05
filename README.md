@@ -1,2 +1,2 @@
 # -CrackYourPlacement
-Find the duplicate number
+contains all the code 
