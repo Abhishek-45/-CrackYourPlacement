@@ -1,0 +1,11 @@
+class Solution:
+    def sortArray(self, nums: List[int]) -> List[int]:
+        for i in range(1,len(nums)):
+            curr_val=nums[i]
+            hole=i-1
+            while hole>=0 and nums[hole]>curr_val:
+                nums[hole+1]=nums[hole]
+                hole-=1
+            nums[hole+1]=curr_val
+        return nums
+          
