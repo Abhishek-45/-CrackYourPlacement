@@ -1,0 +1,25 @@
+class Solution:
+    def setZeroes(self, matrix: List[List[int]]) -> None:
+        """
+        Do not return anything, modify matrix in-place instead.
+        """
+        if matrix==None or len(matrix)==0:
+        
+            pass
+        elif len(matrix)==1 and len(matrix[0])==1:
+            pass
+        else:
+            zero_rows=[False]*len(matrix)
+            zero_columns=[False]*len(matrix[0])
+            
+            for i in range(len(matrix)):
+                for j in range(len(matrix[0])):
+                    if matrix[i][j]==0:
+                        zero_rows[i]=True
+                        zero_columns[j]=True
+            
+            for i in range(len(matrix)):
+                for j in range(len(matrix[0])):
+                    if zero_rows[i] or zero_columns[j]:
+                        matrix[i][j]=0
+            
