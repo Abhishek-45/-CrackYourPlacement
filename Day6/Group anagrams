@@ -1,0 +1,14 @@
+class Solution:
+    def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
+        h={}
+        for word in strs:
+            sortedword=''.join(sorted(word))
+            if sortedword not in h:
+                h[sortedword]=[word]
+            else:
+                h[sortedword].append(word)
+        
+        l=[]
+        for i in h.values():
+            l.append(i)
+        return l
