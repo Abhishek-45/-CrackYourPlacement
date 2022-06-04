@@ -1,0 +1,11 @@
+class Solution:
+    def sortArray(self, nums: List[int]) -> List[int]:
+        result=[]
+        heapq.heapify(nums)
+        
+        while(nums):
+            root=heapq.heappop(nums)
+            result.append(root)
+        
+        return result
+     
