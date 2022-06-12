@@ -1,0 +1,20 @@
+class Solution:
+    def totalFruit(self, fruits: List[int]) -> int:
+        l=0
+        res=0
+        h={}
+        for i in range(len(fruits)):
+            if fruits[i] in h:
+                h[fruits[i]]+=1
+            else:
+                h[fruits[i]]=1
+                
+                
+            while len(h)>2:
+                h[fruits[l]]-=1
+                if h[fruits[l]]==0:
+                    del h[fruits[l]]
+                l+=1
+            res=max(res,i-l+1)
+        return res
+            
