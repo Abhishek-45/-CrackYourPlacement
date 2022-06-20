@@ -1,0 +1,25 @@
+class Solution:
+    def smallestDivisor(self, nums: List[int], threshold: int) -> int:
+        def helper(nums,n,div):
+            s=0
+            for i in range(n):
+                s+=(nums[i]//div)
+                if nums[i]%div!=0:
+                    s+=1
+            return s
+        
+        
+        
+        
+        
+        low=1
+        high=max(nums)
+        ans=high
+        while low<=high:
+            mid=low+(high-low)//2
+            if helper(nums,len(nums),mid)<=threshold:
+                ans=mid
+                high=mid-1
+            else:
+                low=mid+1
+        return ans
